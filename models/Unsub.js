@@ -5,11 +5,27 @@ class Unsub extends Model {}
 
 Unsub.init(
     {
-        sub_id:{},
-        sub_title:{},
-        sub_start:{},
-        date_target:{},
-        user_id: {}
-    },{})
+        cancel_id:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            autoIncrement: true,
+        },
+        sub_id:{
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Subscription',
+                key: ''
+            }
+        },
+        unsub_info:{
+            type: DataTypes.STRING
+        },
+    },{
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "Unsub",
+    })
 
 module.exports = Unsub;
