@@ -6,7 +6,7 @@
     background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #8786d64f, #6981cf, #5734f1, #1407c6);
     }
     
     @media (min-width: 768px) {
@@ -19,4 +19,11 @@
     border-top-right-radius: .3rem;
     border-bottom-right-radius: .3rem;
     }
+    /* added gradient custom 1 to button */
+    }
+    .gradient-custom-1 {
+        background-color: #1407c6;
+        background: -webkit-repeating-linear-gradient(to right, #ee7724, #ee7724, #1407c6, #1407c6);
+
+        background: linear-gradient(to right, #1407c6, #1407c6, #1407c6, #1407c6);
     }
