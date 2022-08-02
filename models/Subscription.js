@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Subscription extends Model { }
@@ -15,11 +15,10 @@ Subscription.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        sub_start: {
-            type:
-            allowNull
+        cancel_date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
         },
-        target_endDate: {},
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -27,7 +26,14 @@ Subscription.init(
                 key: 'user_id',
             }
         }
-    }, {});
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "Subscription",
+    });
 
 
 module.exports = Subscription;
