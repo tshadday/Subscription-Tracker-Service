@@ -9,6 +9,7 @@ Unsub.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
+            primaryKey: true,
         },
         sub_id:{
             type: DataTypes.INTEGER,
