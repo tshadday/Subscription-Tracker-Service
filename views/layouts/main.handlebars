@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
+    <header>
+        {{!-- if logged in, show log out button --}}
+        {{#if logged_in}}
+        <nav>
+        <button class="btn" id="logout">logout</button>
+        </nav>
+        {{/if}}
+    </header>
 </body>
 </html>
