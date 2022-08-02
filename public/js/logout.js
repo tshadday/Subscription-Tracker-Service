@@ -6,7 +6,7 @@ const logout = async () => {
     });
   
     if (response.ok) {
-      //goes to login page on logout
+      // goes to login page on logout
       document.location.replace('/login');
     } else {
       alert('Failed to log out');
