@@ -1,62 +1,62 @@
 [
     {
-        "sub_title": "Netflix",
+        "sub_name": "Netflix",
         "unsub_info": "https://help.netflix.com/en/node/407"
     },
     {
-        "sub_title": "Amazon Prime",
+        "sub_name": "Amazon Prime",
         "unsub_info": "https://www.amazon.com/gp/help/customer/display.html?nodeId=GTJQ7QZY7QL2HK4Y"
     },
     {
-        "sub_title": "Spotify",
+        "sub_name": "Spotify",
         "unsub_info": "https://support.spotify.com/us/article/cancel-premium/"
     },
     {
-        "sub_title": "Uber",
+        "sub_name": "Uber",
         "unsub_info": "https://help.uber.com/en-AU/riders/article/how-do-i-cancel-my-uber-one-membership?nodeId=98db3ed6-74d0-41df-8c0b-e74775f4e358"
     },
     {
-        "sub_title": "Disney+",
+        "sub_name": "Disney+",
         "unsub_info": "https://help.disneyplus.com/csp?id=csp_article_content&sys_kb_id=bfe9f8e9db905118331d6fddd396196a"
     },
     {
-        "sub_title": "Hulu",
+        "sub_name": "Hulu",
         "unsub_info": "https://help.hulu.com/s/article/cancel-hulu-subscription"
     },
     {
-        "sub_title": "Hello Fresh",
+        "sub_name": "Hello Fresh",
         "unsub_info": "https://www.businessinsider.com/how-to-cancel-hellofresh"
     },
     {
-        "sub_title": "Discord Nitro",
+        "sub_name": "Discord Nitro",
         "unsub_info": "https://support.discord.com/hc/en-us/articles/115000435108-Discord-Nitro-Classic-Nitro#:~:text=You%20can%20cancel%20your%20Nitro,if%20you%20withdraw%20your%20subscription."
     },
     {
-        "sub_title": "HBOmax",
+        "sub_name": "HBOmax",
         "unsub_info": "https://help.hbomax.com/aw-en/Answer/Detail/000001191"
     },
     {
-        "sub_title": "Youtube TV",
+        "sub_name": "Youtube TV",
         "unsub_info": "https://www.usatoday.com/story/tech/tips/2022/04/22/how-to-cancel-youtube-tv/7380926001/"
     },
     {
-        "sub_title": "YouTube Premium",
+        "sub_name": "YouTube Premium",
         "unsub_info": "https://www.howtogeek.com/757905/how-to-cancel-your-youtube-premium-subscription/#:~:text=On%20the%20profile%20page%2C%20tap,opens%2C%20tap%20%E2%80%9CDeactivate.%E2%80%9D"
     },
     {
-        "sub_title": "Apple Music",
+        "sub_name": "Apple Music",
         "unsub_info": "https://support.apple.com/en-asia/HT202039"
     },
     {
-        "sub_title": "Walmart+",
+        "sub_name": "Walmart+",
         "unsub_info": "https://useline.com/how-to-cancel/walmart"
     },
     {
-        "sub_title": "Instacart",
+        "sub_name": "Instacart",
         "unsub_info": "https://www.instacart.com/help/section/360007797952/4408784716820"
     },
     {
-        "sub_title": "Chewy",
+        "sub_name": "Chewy",
         "unsub_info": "https://useline.com/how-to-cancel/chewy-autoship"
     }
 ]
