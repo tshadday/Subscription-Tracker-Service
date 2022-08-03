@@ -5,17 +5,11 @@ class Unsub extends Model {}
 
 Unsub.init(
     {
-        cancel_id:{
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            autoIncrement: true,
-            primaryKey: true,
-        },
-        sub_id:{
-            type: DataTypes.INTEGER,
+        sub_name:{
+            type: DataTypes.STRING,
             references: {
                 model: 'Subscription',
-                key: 'sub_id'
+                key: 'sub_name'
             }
         },
         unsub_info:{
