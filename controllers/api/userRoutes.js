@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require('express').Router();   
 const { User, update } = require('../../models/User');
 const { Subscription } = require('../../models/Subscription');
 const { Unsub } = require('../../models/Unsub');
@@ -6,16 +6,16 @@ const { Unsub } = require('../../models/Unsub');
 router.post('/login', async (req, res) => {
   try {
     // takes email input from user and saves as userEmail
-    const userEmail = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
     // if there is no saved email associated with the one that was input, send error
-    if (!userEmail) {
+    if (!userData) {
       res.status(400).json({ message: 'Incorrect email or password' });
       return;
     }
 
-    // uses function in User.js to compare input password to saved encrypted password
-    const validPassword = await userData.checkPassword(req.body.password);
+    // uses bcrypt to compare user input password to saved encrypted password
+    const validPassword = await bcrypt.compare(req.body.password, userData.password);
 
     // if user input password and saved password don't match, send error
     if (!validPassword) {
@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
 
     // saves the current session, sets user_id as userEmail id in sessions, and sets logged_in to true
     req.session.save(() => {
-      req.session.user_id = userEmail.id;
+      req.session.user_id = userData.id;
       req.session.logged_in = true;
 
       res.json({ user: userData, message: 'Successfully logged in' });
@@ -97,11 +97,24 @@ router.delete('/:sub_id', (req, res) => {
     })
     .catch((err) => res.json(err));
 });
+
 // POST how to unsubscribe links
-router.get('/unsubhub', (req, res) => {
-  Unsub.findAll().then((unsubData) => {
-    res.json(unsubData);
-  });
+router.get('/sub/:id', async (req, res) => {
+  try {
+    const unsubData = await Unsub.findbyPk(req.params.id);
+
+    if(!unsubData) {
+      res.status(404).json({message: "No subscriptions with this id"});
+      return;
+    }
+
+    // Serialize unsub data
+    const unsub = unsubData.get({ plain: true })
+    // render serialized "unsub" data to "subscription" handlebars page
+    res.render('subscription', unsub);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 
