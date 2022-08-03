@@ -13,10 +13,6 @@ const model = require("./models");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-<<<<<<< HEAD
-
-=======
->>>>>>> 44f4575eab549dbc0c9a2a3362ad95e7ff945a65
 const PORT = process.env.PORT || 3001;
 
 // requirement for sessions; setup for saving to database
