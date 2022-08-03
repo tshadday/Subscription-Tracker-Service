@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require("bcrypt");   
 const { User } = require('../models');
 const auth = require('../utils/auth');
 
@@ -26,12 +27,29 @@ router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
         return;
+    } else {
+        res.render('loginHomepage');
     }
-  
-    res.render('loginHomepage');
   });
 
-router.get('/register', (req, res) => {
+
+// Register new user
+// URL is /user/register
+router.post('/register', async (req, res) => {
+    try {
+        const newUser = req.body;
+        // saves hashed password to newUser
+        newUser.password = await bcrypt.hash(req.body.password, 10);
+
+        const userData = await User.create(newUser);
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//load register page at /register
+router.get('/register', (req, res, next) => {
     try {
         res.render('registration')
     } catch (err) {
