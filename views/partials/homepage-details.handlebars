@@ -1,0 +1,24 @@
+{{!-- Subscription cards that display to homepage --}}
+<section>
+    {{!-- Subscription Title with link to subscription page --}}
+    <a href="/{{!-- Insert URL to get to subscription card page --}}/{{id}}">
+        <h1>{{sub_title}}</h1>
+    </a>
+
+    {{!-- Cancel date --}}
+    <div>
+        <h3>{{cancel_date}}</h3>
+    </div>
+
+    {{!-- Edit (Update request) --}}
+    <div>
+         <a href="/{{!-- Insert URL to get to subscription edit page (Same as create page, but has info filled out already from the subsription) --}}">
+            <p>Edit</p>
+        </a>
+    </div>
+
+    {{!-- Complete (Delete request) --}}
+    <div>
+       {{!-- Insert how to delete the subscription card --}}
+    </div>
+</section>

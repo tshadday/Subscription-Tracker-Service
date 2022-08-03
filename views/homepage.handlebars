@@ -1,8 +1,16 @@
-    <header>
-        {{!-- if logged in, show log out button --}}
-        {{#if logged_in}}
-        <nav>
-        <button class="btn" id="logout">logout</button>
-        </nav>
-        {{/if}}
-    </header>
+{{!-- Adds logout button to header if logged in --}}
+<header>
+    {{!-- if logged in, show log out button --}}
+    {{#if logged_in}}
+    <nav>
+    <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+</header>
+
+{{!-- Adds subscription cards for each subscription --}}
+<section class="container">
+    {{#each subscription}}
+        {{> homepage-details}}
+    {{/each}}
+</section>

@@ -1,12 +1,12 @@
 .gradient-custom-2 {
     /* fallback for old browsers */
-    background: #fccb90;
+    background: #a790fc;
     
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: -webkit-linear-gradient(to right, #371c98, #d8363a, #dd3675, #b44593);
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #3450662f, #193c6595, #132a56a8, #0f274fb3);
     }
     
     @media (min-width: 768px) {
@@ -19,4 +19,17 @@
     border-top-right-radius: .3rem;
     border-bottom-right-radius: .3rem;
     }
+    /* added gradient custom 1 to button */
+    }
+    .gradient-custom-1 {
+        background-color: #191468;
+        background: -webkit-repeating-linear-gradient(to right, #ee7724, #ee7724, #1407c6, #1407c6);
+
+        background: linear-gradient(to right, #162159);
+    }
+    .gradient-custom-3 {
+        background-color: #162159;
+        background: -webkit-linear-gradient(to right, #162159, #162159, #162159, #162159);
+
+        background: linear-gradient(to right, #162159);
     }
