@@ -67,9 +67,8 @@ router.get('/:user_id', (req, res) => {
 router.put('/:sub_id', (req, res) => {
   Subscription.update(
     {
-      sub_title: req.body.sub_title,
+      sub_name: req.body.sub_title,
       cancel_date: req.body.cancel_date,
-      sub_
     },
     {
       where: {
