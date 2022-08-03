@@ -31,5 +31,12 @@ router.get('/login', (req, res) => {
     res.render('loginHomepage');
   });
 
+router.get('/register', (req, res) => {
+    try {
+        res.render('registration')
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
 module.exports = router;
