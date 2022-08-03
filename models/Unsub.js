@@ -15,7 +15,7 @@ Unsub.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'Subscription',
-                key: ''
+                key: 'sub_id'
             }
         },
         unsub_info:{
