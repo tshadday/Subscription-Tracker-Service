@@ -30,8 +30,11 @@ app.use(session(sess));
 const hbs = exphbs.create();
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
 
 app.listen(PORT, () => {
     console.log("Listening on PORT # https://localhost:3001");
-    // sequelize.sync({ force: true });
+     sequelize.sync({ force: false });
 });
