@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require("bcrypt");   
-const User = require('../models');
+const { User } = require('../models');
 const auth = require('../utils/auth');
 
 router.get('/', auth, async (req, res) => {
@@ -79,6 +79,17 @@ router.get('/subscription', (req, res) => {
 router.get('/homepage', (req, res) => {
     try {
         res.render('UserHomepage', {
+            style: 'homepage.css'
+        })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+//loads page to create subscription data
+router.get('/create', (req, res) => {
+    try {
+        res.render('createSubscription', {
             style: 'homepage.css'
         })
     } catch (err) {
