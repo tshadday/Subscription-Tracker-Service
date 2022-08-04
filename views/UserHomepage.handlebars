@@ -1,23 +1,49 @@
 {{!-- Adds logout button to header if logged in --}}
 <header>
-    <div class="jumbotron">
-        <h1 class="display-4">UnsubHub</h1>
-        <p class="lead">{{user_name}}</p>
-        <hr class="my-4">
-    </div>
-    <section>
+<nav class="navbar navbar-light bg-primary">
+  <a class="navbar-brand" href="/homepage">
+    <img src="images/Unsub-Hub.png" width="30" height="30" class="d-inline-block align-top" alt="UnsubHub logo">
+    UnsubHub
+  </a>
+  <div style="text-align: center">
+    {{user_name}}'s Subscriptions
+  </div>
+  <section>
         {{#if logged_in}}
         <nav>
             <button class="btn" id="logout">Logout</button>
-            <button class="btn" id="createnew">Create New</button>
         </nav>
         {{/if}}
     </section>
+</nav> 
 </header>
 
-{{!-- Adds subscription cards for each subscription --}}
-<section class="container">
-    {{#each subscription}}
-        {{> userCard-details}}
-    {{/each}}
-</section>
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+      Subscription List
+    </h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2"
+          ><a href="#!" class="text-success"
+            ><i class="fas fa-plus fa-2x" aria-hidden="true"></i></a
+        ></span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead>
+            <tr>
+              <th class="text-center">Subscription</th>
+              <th class="text-center">Cancel Date</th>
+              <th class="text-center">Edit</th>
+              <th class="text-center">Delete</th>
+            </tr>
+          </thead>
+        {{!-- Adds subscription cards for each subscription --}}
+        <section class="container">
+            {{#each subscription}}
+                {{> userCard-details}}
+            {{/each}}
+        </section>
+        </table>
+      </div>
+    </div>
+  </div>
