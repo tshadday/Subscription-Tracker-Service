@@ -6,14 +6,14 @@ class User extends Model { }
 
 User.init(
     {
-        user_id: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         user_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            required: true,
             unique: true
         },
         email: {
@@ -34,7 +34,7 @@ User.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "User",
+        modelName: "user",
     }
 );
 

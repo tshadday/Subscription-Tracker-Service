@@ -5,7 +5,7 @@ class Subscription extends Model { }
 
 Subscription.init(
     {
-        sub_id: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -22,8 +22,8 @@ Subscription.init(
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'User',
-                key: 'user_id',
+                model: 'user',
+                key: 'id',
             }
         }
     },
@@ -32,7 +32,7 @@ Subscription.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "Subscription",
+        modelName: "subscription",
     });
 
 
