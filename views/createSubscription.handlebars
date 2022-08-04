@@ -1,11 +1,11 @@
 <header>
     <nav class="navbar navbar-light bg-primary">
-        <a class="navbar-brand" href="/homepage">
+        <a class="navbar-brand" href="/">
             <img src="images/Unsub-Hub.png" width="30" height="30" class="d-inline-block align-top" alt="UnsubHub logo">
                 UnsubHub
         </a>
         <div style="text-align: center">
-            Create A New Subscription Tracker
+            <h1>Create A New Subscription Tracker</h1>
         </div>
         <section>
             {{#if logged_in}}
@@ -16,3 +16,34 @@
         </section>
     </nav> 
 </header>
+<main>
+    <form>
+        <div class="form-group">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected>Select your subscription Service</option>
+                <option value="1">Netflix</option>
+                <option value="2">Amazon Prime</option>
+                <option value="3">Spotify</option>
+                <option value="4">Uber</option>
+                <option value="5">Disney+</option>
+                <option value="6">Hulu</option>
+                <option value="7">Hello Fresh</option>
+                <option value="8">Discord Nitro</option>
+                <option value="9">HBO Max</option>
+                <option value="10">Youtube TV</option>
+                <option value="11">Youtube Premium</option>
+                <option value="12">Apple Music</option>
+                <option value="13">Walmart+</option>
+                <option value="14">Instacart</option>
+                <option value="15">Chewy</option>
+            </select>
+        </div>
+        <div style="text-align: center">
+            <h3>Cancel By Date: <input type="text" id="datepicker"></h3>
+        </div>
+        <br>
+        <div style="text-align: center">
+            <button type="button" class="btn btn-success btn-lg btn-block">Create Subscription Tracker!</button>
+        </div>
+    </form>
+</main>

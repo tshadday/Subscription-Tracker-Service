@@ -5,7 +5,7 @@
         <div class="card rounded-3 text-black">
           <div class="row g-0">
             <div class="col-lg-6">
-              <div class="card-body p-md-5 mx-md-4">
+              <div class="card-body p-md-3 mx-md-4">
 <!-- added local image to VS code UnsubHub-logo -->
                 <div class="text-center">
                   <img
@@ -16,45 +16,45 @@
                   <h4 class="mt-1 mb-5 pb-1">Help Us Save You Money</h4>
                 </div>
 
-                <form>
+                <form class="login-form">
                   <p>Please login to your account</p>
 
                   <div class="form-outline mb-4">
                     <input
                       type="email"
-                      id="form2Example11"
+                      id="emaillogin"
                       class="form-control"
                       placeholder="johndoe@example.com"
                     />
                     <label
                       class="form-label"
-                      for="form2Example11"
+                      for="email-login"
                     >Email Address</label>
                   </div>
 
                   <div class="form-outline mb-4">
                     <input
                       type="password"
-                      id="form2Example22"
+                      id="password-login"
                       class="form-control"
                     />
                     <label
                       class="form-label"
-                      for="form2Example22"
+                      for="passwordlogin"
                     >Password</label>
                   </div>
 <!-- changed button gradient to custom-1 -->
                   <div class="text-center pt-1 mb-5 pb-1">
                     <button
-                      class="btn btn-primary btn-block fa-lg gradient-custom-1 mb-3"
-                      type="button"
-                      href="./UserHomepage.handlebars"
+                      onclick="location.href = '/'"
+                      class="btn btn-primary btn-block fa-lg gradient-custom-1"
+                      type="submit"
                     >Log in</button>
                   </div>
                   <div
-                    class="d-flex align-items-center justify-content-center pb-4"
+                    class="d-flex align-items-center justify-content-center"
                   >
-                  <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="/register"
+                  <p class="text-center text-muted mt-2 mb-0">Don't have an account? <a href="/register"
                     class="fw-bold text-body"><u>Register here</u></a></p>
 
                 </form>
@@ -78,9 +78,6 @@
       </div>
     </div>
   </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
 </form>
 
-<script src="/js/login.js"></script>
+<script src="./js/login.js"></script>

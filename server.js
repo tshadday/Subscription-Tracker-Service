@@ -5,9 +5,6 @@ const routes = require('./controllers');
 const sequelize = require("./config/connection");
 const exphbs = require('express-handlebars');
 
-
-const model = require("./models");
-
 // allows us to save sessions into database
 // created table called sessions
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -25,16 +22,18 @@ const sess = {
       db: sequelize
     })
 };
-app.use(express.json());
 app.use(session(sess));
+
 const hbs = exphbs.create();
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-app.listen(PORT, () => {
-    console.log("Listening on PORT # https://localhost:3001");
-     sequelize.sync({ force: true });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening on PORT # https://localhost:3001'));
 });

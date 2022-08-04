@@ -8,25 +8,26 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form class="registration-form">
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="text" id="name-signup" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example1cg">Your Name</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input type="email" id="email-signup" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" id="password-signup" class="form-control form-control-lg" />
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="submit"
+                    onclick="location.href = '/'"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                 </div>
 
@@ -42,3 +43,5 @@
     </div>
   </div>
 </section>
+
+<script src="./js/signup.js"></script>
