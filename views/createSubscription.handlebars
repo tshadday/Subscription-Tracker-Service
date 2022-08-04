@@ -1,0 +1,18 @@
+<header>
+    <nav class="navbar navbar-light bg-primary">
+        <a class="navbar-brand" href="/homepage">
+            <img src="images/Unsub-Hub.png" width="30" height="30" class="d-inline-block align-top" alt="UnsubHub logo">
+                UnsubHub
+        </a>
+        <div style="text-align: center">
+            {{user_name}}'s Subscriptions
+        </div>
+        <section>
+            {{#if logged_in}}
+            <nav>
+                <button class="btn" id="logout">Logout</button>
+            </nav>
+            {{/if}}
+        </section>
+    </nav> 
+</header>
