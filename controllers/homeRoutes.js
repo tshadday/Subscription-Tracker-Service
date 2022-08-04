@@ -37,11 +37,13 @@ router.get('/login', (req, res) => {
 // URL is /user/register
 router.post('/register', async (req, res) => {
     try {
-        const newUser = req.body;
+        const userData = await User.create(req.body);
+        // const newUser = req.body;
+        // console.log(newUser);
         // saves hashed password to newUser
-        newUser.password = await bcrypt.hash(req.body.password, 10);
+        // newUser.password = await bcrypt.hash(req.body.password, 10);
 
-        const userData = await User.create(newUser);
+        // const userData = await User.create(newUser);
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json(err);
