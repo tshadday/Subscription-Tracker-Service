@@ -6,7 +6,7 @@
     UnsubHub
   </a>
   <div style="text-align: center">
-    {{user_name}}'s Subscriptions
+    <h1>{{user_name}}'s Subscriptions</h1>
   </div>
   <section>
         {{#if logged_in}}
@@ -43,7 +43,8 @@
                 {{> userCard-details}}
             {{/each}}
         </section>
-        </table>
+        </table> 
       </div>
     </div>
+    <button type="button" onclick="location.href ='/create'" class="d-flex justify-content-center btn btn-success btn-lg">Add New Subscription</button>
   </div>
