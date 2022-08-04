@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require("bcrypt");   
-const { User } = require('../models');
+const User = require('../models');
 const auth = require('../utils/auth');
 
 router.get('/', auth, async (req, res) => {
@@ -30,7 +30,7 @@ router.get('/login', (req, res) => {
     } else {
         res.render('loginHomepage');
     }
-  });
+});
 
 
 // Register new user
@@ -56,5 +56,14 @@ router.get('/register', (req, res, next) => {
         res.status(400).json(err);
     }
 });
+
+//loads subscription page DELETE LATER
+router.get('/subscription', (req, res) => {
+    try {
+        res.render('subscription')
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;
