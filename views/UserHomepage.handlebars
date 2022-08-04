@@ -1,16 +1,24 @@
 {{!-- Adds logout button to header if logged in --}}
 <header>
-    {{!-- if logged in, show log out button --}}
-    {{#if logged_in}}
-    <nav>
-    <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
+    <div class="jumbotron">
+        <h1 class="display-4">UnsubHub</h1>
+        <p class="lead">{{user_name}}</p>
+        <hr class="my-4">
+    </div>
 </header>
 
 {{!-- Adds subscription cards for each subscription --}}
 <section class="container">
     {{#each subscription}}
-        {{> userCard-details}}
+    {{> userCard-details}}
     {{/each}}
+</section>
+
+<section>
+    {{#if logged_in}}
+    <nav>
+        <button class="btn" id="logout">Logout</button>
+        <button class="btn" id="createnew">Create New</button>
+    </nav>
+    {{/if}}
 </section>
