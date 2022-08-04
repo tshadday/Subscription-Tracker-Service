@@ -5,20 +5,19 @@
         <p class="lead">{{user_name}}</p>
         <hr class="my-4">
     </div>
+    <section>
+        {{#if logged_in}}
+        <nav>
+            <button class="btn" id="logout">Logout</button>
+            <button class="btn" id="createnew">Create New</button>
+        </nav>
+        {{/if}}
+    </section>
 </header>
 
 {{!-- Adds subscription cards for each subscription --}}
 <section class="container">
     {{#each subscription}}
-    {{> userCard-details}}
+        {{> userCard-details}}
     {{/each}}
-</section>
-
-<section>
-    {{#if logged_in}}
-    <nav>
-        <button class="btn" id="logout">Logout</button>
-        <button class="btn" id="createnew">Create New</button>
-    </nav>
-    {{/if}}
 </section>

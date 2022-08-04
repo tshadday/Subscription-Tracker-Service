@@ -16,6 +16,7 @@ router.get('/', auth, async (req, res) => {
             users,
             // check if user is logged in, and loads homepage
             logged_in: req.session.logged_in,
+            style: 'login.css'
           });
     } catch (err) {
         res.status(400).json(err);
@@ -28,7 +29,9 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     } else {
-        res.render('loginHomepage');
+        res.render('loginHomepage', {
+            style: 'login.css'
+        });
     }
 });
 
@@ -51,7 +54,9 @@ router.post('/register', async (req, res) => {
 //load register page at /register
 router.get('/register', (req, res, next) => {
     try {
-        res.render('registration')
+        res.render('registration', {
+            style: 'login.css'
+        })
     } catch (err) {
         res.status(400).json(err);
     }
@@ -60,7 +65,20 @@ router.get('/register', (req, res, next) => {
 //loads subscription page to test: DELETE LATER
 router.get('/subscription', (req, res) => {
     try {
-        res.render('subscription')
+        res.render('subscription', {
+            style: 'homepage.css'
+        })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+//loads homepage to test: DELETE LATER
+router.get('/homepage', (req, res) => {
+    try {
+        res.render('UserHomepage', {
+            style: 'homepage.css'
+        })
     } catch (err) {
         res.status(500).json(err);
     }
