@@ -57,12 +57,14 @@ router.post('/', (req, res) => {
       res.json(err);
     });
 });
+
 // GET all subscriptions
 router.get('/:user_id', (req, res) => {
   Subscription.findAll().then((subData) => {
     res.json(subData);
   });
 });
+
 // UPDATE a subscription
 router.put('/:sub_id', (req, res) => {
   Subscription.update(
@@ -84,6 +86,7 @@ router.put('/:sub_id', (req, res) => {
       res.json(err);
     });
 });
+
 // DELETE a subscription
 router.delete('/:sub_id', (req, res) => {
   Subscription.destroy({
@@ -115,7 +118,6 @@ router.get('/sub/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 
 module.exports = router;
