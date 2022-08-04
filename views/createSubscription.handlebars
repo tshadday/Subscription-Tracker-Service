@@ -2,11 +2,12 @@
     <nav class="navbar navbar-light bg-primary">
         <a class="navbar-brand" href="/homepage">
             <img src="images/Unsub-Hub.png" width="30" height="30" class="d-inline-block align-top" alt="UnsubHub logo">
-                UnsubHub
+            UnsubHub
         </a>
         <div style="text-align: center">
             Create A New Subscription Tracker
         </div>
+
         <section>
             {{#if logged_in}}
             <nav>
@@ -14,5 +15,32 @@
             </nav>
             {{/if}}
         </section>
-    </nav> 
+    </nav>
 </header>
+
+<form>
+    <label for="subscriptionName">Subscription Name</label>
+    <input type="text" list="subs" id="sub" name="sub">
+    <datalist id="subs">
+        <option value="Netflix"></option>
+        <option value="Amazon Prime"></option>
+        <option value="Spotify"></option>
+        <option value="Uber"></option>
+        <option value="Disney+"></option>
+        <option value="Hulu"></option>
+        <option value="HelloFresh"></option>
+        <option value="DiscordNitro"></option>
+        <option value="HBOmax"></option>
+        <option value="Youtube TV"></option>
+        <option value="Youtube Premium"></option>
+        <option value="Apple Music"></option>
+        <option value="Walmart+"></option>
+        <option value="Instacart"></option>
+        <option value="Chewy"></option>
+    </datalist>
+
+    <label for="cancelDate">Cancel Date</label>
+    <input type="date" id="cancelDate" name="cancelDate">
+
+
+</form>
