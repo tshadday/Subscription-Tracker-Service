@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const bcrypt = require("bcrypt");   
 const { User, Subscription } = require('../models');
-const auth = require('../utils/auth');
+//const auth = require('../utils/auth');
 
-router.get('/', auth, async (req, res) => {
+//needs auth
+router.get('/', async (req, res) => {
     try {
         // gets all user data
         const subData = await Subscription.findAll({
@@ -15,13 +16,13 @@ router.get('/', auth, async (req, res) => {
             ]
         });
 
-        const subscriptions = subData.map((project) => project.get({ plain: true }));
+        const subscriptions = subData.map((subscription) => subscription.get({ plain: true }));
 
         res.render('UserHomepage', {
             subscriptions,
             // check if user is logged in, and loads homepage
             logged_in: req.session.logged_in,
-            style: 'login.css'
+            style: 'homepage.css'
           });
     } catch (err) {
         res.status(500).json(err);
@@ -51,7 +52,8 @@ router.get('/subscription/:id', async (req, res) => {
     }
 });
 
-router.get('/', auth, async (req, res) => {
+// needs auth
+router.get('/', async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
