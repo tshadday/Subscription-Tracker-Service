@@ -57,7 +57,7 @@ router.get('/register', (req, res, next) => {
     }
 });
 
-//loads subscription page DELETE LATER
+//loads subscription page to test: DELETE LATER
 router.get('/subscription', (req, res) => {
     try {
         res.render('subscription')
