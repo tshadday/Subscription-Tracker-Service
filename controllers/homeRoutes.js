@@ -94,7 +94,6 @@ router.post('/register', async (req, res) => {
         const userData = await User.create(req.body);
         const newUser = req.body;
         console.log(newUser);
-
         //const userData = await User.create(newUser);
         res.status(200).json(userData);
     } catch (err) {
