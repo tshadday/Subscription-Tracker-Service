@@ -1,7 +1,7 @@
 const router = require('express').Router();   
-const { User } = require('../../models/User');
-const { Subscription } = require('../../models/Subscription');
-const { Unsub } = require('../../models/Unsub');
+const { User } = require('../../models');
+const { Subscription } = require('../../models');
+const { Unsub } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -26,29 +26,29 @@ router.post('/login', async (req, res) => {
 
     // if there is no saved email associated with the one that was input, send error
     if (!userData) {
-      res.status(400).json({ message: 'Incorrect email or password' });
+      res.status(400).json({ message: 'Incorrect email' });
       return;
     }
-
-    // uses bcrypt to compare user input password to saved encrypted password
-    const validPassword = await bcrypt.compare(req.body.password, userData.password);
+    console.log(req.body.password);
+    console.log(userData.password);
 
     // if user input password and saved password don't match, send error
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect email or password' });
+    if (req.body.password !== userData.password) {
+      res.status(400).json({ message: 'Incorrect password' });
       return;
     }
 
-    // saves the current session, sets user_id as userEmail id in sessions, and sets logged_in to true
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
 
-      res.json({ user: userData, message: 'Successfully logged in' });
-    });
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
+    // saves the current session, sets logged_in to true
+    req.session.save();
+
+    res.redirect('/');
 
   } catch (err) {
     res.status(400).json(err);
+    console.log(err)
   }
 });
 

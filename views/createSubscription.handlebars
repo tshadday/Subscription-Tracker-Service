@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-light bg-primary">
         <a class="navbar-brand" href="/">
-            <img src="images/Unsub-Hub.png" width="30" height="30" class="d-inline-block align-top" alt="UnsubHub logo">
+            <img src="images/UnsubHub-small.png" width="30" height="30" class="d-inline-block align-top" alt="UnsubHub logo">
                 UnsubHub
         </a>
         <div style="text-align: center">
@@ -19,7 +19,7 @@
 <main>
     <form>
         <div class="form-group">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="subscription-name">
                 <option selected>Select your subscription Service</option>
                 <option value="1">Netflix</option>
                 <option value="2">Amazon Prime</option>
@@ -38,7 +38,7 @@
                 <option value="15">Chewy</option>
             </select>
         </div>
-        <div style="text-align: center">
+        <div style="text-align: center" id="cancel-date">
             <h3>Cancel By Date: <input type="text" id="datepicker"></h3>
         </div>
         <br>
@@ -47,3 +47,5 @@
         </div>
     </form>
 </main>
+
+<script src="./js/subscription.js"></script>
