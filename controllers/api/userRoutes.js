@@ -64,4 +64,21 @@ router.post('/logout', (req, res) => {
   }
 });
 
+  // Post a subscription
+  router.post('/create', (req, res) => {
+    Subscription.update(
+      {
+        sub_name: req.body.sub_name,
+        cancel_date: req.body.cancel_date,
+      },
+    )
+      .then((updatedSub) => {
+        res.json(updatedSub);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json(err);
+      });
+  });
+
 module.exports = router;

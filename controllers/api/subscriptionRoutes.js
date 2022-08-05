@@ -48,7 +48,7 @@ router.delete('/:id', auth, async (req, res) => {
   router.put('/:id', (req, res) => {
     Subscription.update(
       {
-        sub_name: req.body.sub_title,
+        sub_name: req.body.sub_name,
         cancel_date: req.body.cancel_date,
       },
       {
