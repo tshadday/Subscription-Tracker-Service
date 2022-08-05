@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
   const name = document.querySelector('#subscription-name').value.trim();
   const cancel_date = document.querySelector('#cancel-date').value.trim();
 
-  if (name && needed_funding && description) {
+  if (name && cancel_date) {
     const response = await fetch(`/api/subscription`, {
       method: 'POST',
       body: JSON.stringify({ name, cancel_date }),

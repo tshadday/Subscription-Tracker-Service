@@ -1,10 +1,11 @@
 const router = require('express').Router();   
-const { User } = require('../../models/User');
-const { Subscription } = require('../../models/Subscription');
-const { Unsub } = require('../../models/Unsub');
+const { User } = require('../../models');
+const { Subscription } = require('../../models');
+const { Unsub } = require('../../models');
 const auth = require('../../utils/auth');
 
-router.post('/', auth, async (req, res) => {
+// removed auth
+router.post('/', async (req, res) => {
     try {
         const newSub = await Subscription.create({
           ...req.body,
@@ -17,7 +18,8 @@ router.post('/', auth, async (req, res) => {
       }
 });
 
-router.delete('/:id', auth, async (req, res) => {
+// removed auth
+router.delete('/:id', async (req, res) => {
     try {
       const subData = await Subscription.destroy({
         where: {
@@ -45,7 +47,7 @@ router.delete('/:id', auth, async (req, res) => {
   });
   
   // UPDATE a subscription
-  router.put('/:sub_id', (req, res) => {
+  router.put('/:id', (req, res) => {
     Subscription.update(
       {
         sub_name: req.body.sub_title,
@@ -67,7 +69,7 @@ router.delete('/:id', auth, async (req, res) => {
   });
   
   // POST how to unsubscribe links
-  router.get('/sub/:id', async (req, res) => {
+  router.get('/:id', async (req, res) => {
     try {
       const unsubData = await Unsub.findbyPk(req.params.id);
   
