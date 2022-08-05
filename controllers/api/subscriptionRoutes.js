@@ -44,6 +44,17 @@ router.delete('/:id', auth, async (req, res) => {
     });
   });
   
+// Post a subscription
+// URL api/subscription/create
+router.post('/create', async (req, res) => {
+  try {
+    const subData = await Subscription.create(req.body);
+    res.status(200).json(subData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
   // UPDATE a subscription
   router.put('/:id', (req, res) => {
     Subscription.update(
