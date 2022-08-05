@@ -41,6 +41,7 @@ router.post('/login', async (req, res) => {
 
     req.session.user_id = userData.id;
     req.session.logged_in = true;
+    req.session.user_name = userData.user_name;
     // saves the current session, sets logged_in to true
     req.session.save();
 
