@@ -4,8 +4,7 @@ const { Subscription } = require('../../models');
 const { Unsub } = require('../../models');
 const auth = require('../../utils/auth');
 
-// removed auth
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
     try {
         const newSub = await Subscription.create({
           ...req.body,
@@ -18,8 +17,7 @@ router.post('/', async (req, res) => {
       }
 });
 
-// removed auth
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     try {
       const subData = await Subscription.destroy({
         where: {

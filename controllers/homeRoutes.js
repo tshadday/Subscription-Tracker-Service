@@ -1,9 +1,8 @@
 const router = require('express').Router();   
 const { User, Subscription } = require('../models');
-//const auth = require('../utils/auth');
+const auth = require('../utils/auth');
 
-//needs auth
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     try {
         // gets all user data
         const subData = await Subscription.findAll({
@@ -57,8 +56,7 @@ router.get('/subscription/:id', async (req, res) => {
     }
 });
 
-// needs auth
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
