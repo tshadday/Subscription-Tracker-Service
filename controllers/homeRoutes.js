@@ -96,7 +96,6 @@ router.post('/register', async (req, res) => {
     try {
         const newUser = req.body;
         console.log(newUser);
-
         res.redirect('/login');
     } catch (err) {
         res.status(500).json(err);
