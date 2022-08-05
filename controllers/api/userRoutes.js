@@ -29,8 +29,6 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Incorrect email' });
       return;
     }
-    console.log(req.body.password);
-    console.log(userData.password);
 
     // if user input password and saved password don't match, send error
     if (req.body.password !== userData.password) {

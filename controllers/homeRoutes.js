@@ -14,11 +14,6 @@ router.get('/', auth, async (req, res) => {
             ]
         });
 
-        
-        console.log("logged in?", req.session.logged_in);
-
-        console.log("NAme", req.session.user_name);
-
         const subscriptions = subData.map((subscription) => subscription.get({ plain: true }));
 
         res.render('UserHomepage', {
@@ -93,7 +88,6 @@ router.get('/login', (req, res) => {
 router.post('/register', async (req, res) => {
     try {
         const newUser = req.body;
-        console.log(newUser);
         res.redirect('/login');
     } catch (err) {
         res.status(500).json(err);
@@ -110,28 +104,6 @@ router.get('/register', (req, res, next) => {
         res.status(400).json(err);
     }
 });
-
-//loads subscription page to test: DELETE LATER
-// router.get('/subscription', (req, res) => {
-//     try {
-//         res.render('subscription', {
-//             style: 'homepage.css'
-//         })
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// })
-
-//loads homepage to test: DELETE LATER
-// router.get('/', (req, res) => {
-//     try {
-//         res.render('UserHomepage', {
-//             style: 'homepage.css'
-//         })
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// })
 
 //loads page to create subscription data
 router.get('/create', (req, res) => {

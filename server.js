@@ -5,6 +5,7 @@ const routes = require('./controllers');
 const sequelize = require("./config/connection");
 const exphbs = require('express-handlebars');
 
+
 // allows us to save sessions into database
 // created table called sessions
 const SequelizeStore = require('connect-session-sequelize')(session.Store);

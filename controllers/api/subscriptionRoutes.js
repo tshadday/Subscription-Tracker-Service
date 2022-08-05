@@ -49,7 +49,15 @@ router.delete('/:id', auth, async (req, res) => {
 router.post('/create', async (req, res) => {
   try {
     const subData = await Subscription.create(req.body);
-    res.status(200).json(subData);
+    console.log(subData);
+    console.log(req.session.sub_name);
+    console.log(req.session.cancel_date);
+
+    req.session.sub_name = subData.sub_name;
+    req.session.cancel_date = subData.cancel_date;
+    req.session.save()
+    
+    res.redirect('/');
   } catch (err) {
     res.status(400).json(err);
   }
