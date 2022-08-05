@@ -39,6 +39,20 @@
           </thead>
         {{!-- Adds subscription cards for each subscription --}}
         <section class="container">
+          <tbody>
+            <tr>
+                <td class="pt-3-half"><a href="/subscription/1">Netflix</a></td>
+                <td class="pt-3-half">09/21/22</td>
+                <td class="pt-3-half"><a href="/edit">Edit</a></td>
+                <td>
+                  <span class="table-remove">
+                      <button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
+                        Delete
+                      </button>
+                  </span>
+                </td>
+            </tr>
+          </tbody>
             {{#each subscription}}
                 {{> userCard-details}}
             {{/each}}

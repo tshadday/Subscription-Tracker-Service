@@ -2,7 +2,7 @@
     <nav class="navbar navbar-light bg-primary">
         <a class="navbar-brand" href="/">
             <img src="images/UnsubHub-small.png" width="30" height="30" class="d-inline-block align-top" alt="UnsubHub logo">
-                UnsubHub
+            UnsubHub
         </a>
         <div style="text-align: center">
             <h1>{{sub_name}} Tracker Information</h1>
@@ -16,30 +16,25 @@
         </section>
     </nav> 
 </header>
-<main>
-    {{!-- Subsrcription Page that displays to homepage --}}
+<main style="text-align: center">
     <section>
-    {{!-- Subscription title with link to sub page --}}
-    <a href=" Insert URL to get to  sub page card //{{id}}">
     <h1>{{sub_name}}</h1>
-    </a>
-
+    <br>
     {{!-- Cancel Date --}}
     <div> 
-        <h3>{{Cancel_Date}}</h3>
+        <h3>Cancel By: {{cancel_date}}</h3>
     </div>
-
-    {{!-- Edit (update request) --}}
-    <div>
-        {{!-- insert URL to get to subscription edit page --}}
-        <a href="#"
-        <p>EditBtn</p>
-        </a>
+    <br>
+    {{!-- link to your calendar --}}
+    <div class="calendarLink">
+        <button type="submit" class="btn btn-secondary">Link To Your Calendar!</button>
     </div>
-
-    {{!-- Complete (Delete Request) --}}
+    <br>
+    {{!-- How to unsub --}}
     <div>
-        {{!-- Insert Delete subscription card --}}
+        <h3><a href="https://help.netflix.com/en/node/407">How to Unsubscribe from {{sub_name}}</a></h3>
     </div>
     </section>
 </main>
+
+<script src="./js/calendar.js"></script>
