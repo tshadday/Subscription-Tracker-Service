@@ -18,12 +18,15 @@ router.get('/', async (req, res) => {
         
         console.log("logged in?", req.session.logged_in);
 
+        console.log("NAme", req.session.user_name);
+
         const subscriptions = subData.map((subscription) => subscription.get({ plain: true }));
 
         res.render('UserHomepage', {
             subscriptions,
             // check if user is logged in, and loads homepage
             logged_in: req.session.logged_in,
+            user_name: req.session.user_name,
             style: 'homepage.css'
           });
     } catch (err) {
@@ -91,11 +94,9 @@ router.get('/login', (req, res) => {
 // URL is /users/register
 router.post('/register', async (req, res) => {
     try {
-        const userData = await User.create(req.body);
         const newUser = req.body;
         console.log(newUser);
-        //const userData = await User.create(newUser);
-        res.status(200).json(userData);
+        res.redirect('/login');
     } catch (err) {
         res.status(500).json(err);
     }

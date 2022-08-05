@@ -13,7 +13,6 @@ User.init(
         user_name: {
             type: DataTypes.STRING,
             required: true,
-            unique: true
         },
         email: {
             type: DataTypes.STRING,
